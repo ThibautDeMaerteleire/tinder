@@ -12,7 +12,8 @@ module.exports = (env, argv) => {
 
         entry: './src/scripts/app.js',
         output: {
-            filename: 'bundle.js'
+            filename: 'bundle.js',
+            path: __dirname + '/docs'
         },
         module: {
             rules: [{
@@ -45,7 +46,9 @@ module.exports = (env, argv) => {
             ]
         },
         plugins: [
-            new HtmlWebpackPlugin(),
+            new HtmlWebpackPlugin({
+                template: './src/index.html'
+            }),
             new SassWebpackPlugin({
                 filename: '[name].css'
             })
