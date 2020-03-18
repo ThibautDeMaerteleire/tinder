@@ -63,11 +63,6 @@ body {
   opacity: 0;
 }
 
-.showStamp {
-  transition: 0.3s;
-  opacity: 1;
-}
-
 #photo {
   width: 100%;
   border-top-left-radius: 5px;
