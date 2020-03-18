@@ -22,8 +22,8 @@ module.exports = (env, argv) => {
 
     // define the output
     output: {
-      path: path.resolve(__dirname, 'dist'),
-      filename: 'bundle.min.js',
+      path: path.resolve(__dirname, 'docs'),
+      filename: 'app.js',
     },
 
     // define the different modules
