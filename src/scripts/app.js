@@ -1,16 +1,11 @@
-import '../styles/main.css';
+import { randomUser10 } from './config.js';
+import { fetchDATA } from './fetchUsers.js';
 
-const helloWorld = () => {
-  // get our app container
-  const app = document.getElementById('app');
 
-  // create a new DOM element
-  const element = document.createElement('div');
-  element.innerHTML = 'Hello World!';
 
-  // add to our app container
-  app.appendChild(element);
-};
+const app = () => {
+  fetchDATA(randomUser10);
 
-// start hellWorld app
-helloWorld();
+}
+
+app();
