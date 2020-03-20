@@ -1,12 +1,9 @@
-import { storeItem, getItem} from './storageController.js';
+import { getItem } from './storageController.js';
+import { photo, name, age, distance} from './config.js';
 
-const photo = document.querySelector('#photo');
-const name = document.querySelector('#name');
-const age = document.querySelector('#age');
-const distance = document.querySelector('#distance');
-
+// Add data to user interface/card
 export function showProfile(arr) {
-  const obj = arr[parseInt(getItem('index'))];
+  const obj = arr[getItem('index')];
   photo.setAttribute('src', obj.image);
   name.innerHTML = obj.firstname;
   age.innerHTML = obj.age;
