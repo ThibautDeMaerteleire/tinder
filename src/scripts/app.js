@@ -7,8 +7,8 @@ import { storeItem } from './storageController.js';
 
 // When page is loaded in window
 window.onload = () => {
-  storeItem('liked', '[]');
-  storeItem('disliked', '[]');
+  // storeItem('liked', '[]');
+  // storeItem('disliked', '[]');
   storeItem('index', 0);
 }
 
