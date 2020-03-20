@@ -1,11 +1,10 @@
 import { storeItem, getItem} from './storageController.js';
 import { showProfile } from './interface.js';
 import { fetchDATA } from './fetchUsers.js';
-import { randomUser10, waitTime, stampTransSpeed, stamp, dislikeBtn, likeBtn, hamburgerBtn, storedUsers, storedLikes, storedDislike } from './config.js';
+import { randomUser10, waitTime, stampTransSpeed, stamp, dislikeBtn, likeBtn, hamburgerBtn, storedUsers, storedLikes, storedDislike, buttons, content, back } from './config.js';
 
 // Function with all event listeners, easy to export to other files
 export function events(users) {
-
   // Adding event listener to Like button
   likeBtn.addEventListener('click', async (ev) => { 
     styleStamp('');
@@ -33,6 +32,10 @@ export function events(users) {
   // Adding event listener to Hamburgermenu button
   hamburgerBtn.addEventListener('click', async (e) => {
     updateContentStoredUsers();
+    displayStoredUsers();
+  });
+
+  back.addEventListener('click', (e) => {
     displayStoredUsers();
   });
 }
@@ -66,9 +69,19 @@ function displayStoredUsers() {
   const displayed = storedUsers.style.display;
   if(displayed == 'block') {
     storedUsers.style.display = 'none';
+    back.style.display = 'none';
+    buttons.style.display = 'flex';
+    content.style.display = 'block';
   } else {
     storedUsers.style.display = 'block';
+    back.style.display = 'block';
+    buttons.style.display = 'none';
+    content.style.display = 'none';
   }
+}
+
+function hideStoredUsers() {
+  
 }
 
 // Show the next user
@@ -83,7 +96,7 @@ export function nextUser(users) {
 
 // Setting the effects and styles on the stamp
 async function styleStamp(prefix) {
-  await stamp.setAttribute('src', `./images/${prefix}like_stamp.png`);
+  stamp.setAttribute('src', `./images/${prefix}like_stamp.png`);
   stamp.style.transition = stampTransSpeed;
   stamp.style.opacity = 1;
 }

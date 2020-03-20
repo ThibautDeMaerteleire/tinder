@@ -213,3 +213,13 @@ ul {
 .links:hover {
   cursor: pointer;
 }
+
+#back {
+  position: absolute;
+  font-size: 3rem;
+  margin: 0.5rem 0rem 0rem 0.5rem;
+}
+
+#back:hover {
+  cursor: pointer;
+}

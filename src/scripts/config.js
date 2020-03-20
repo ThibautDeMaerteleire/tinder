@@ -15,3 +15,6 @@ export const hamburgerBtn = document.querySelector('.info');
 export const storedUsers = document.querySelector('#storedUsers');
 export const storedLikes = document.querySelector('#storedLikes');
 export const storedDislike = document.querySelector('#storedDislike');
+export const buttons = document.querySelector('#buttons');
+export const content = document.querySelector('#content');
+export const back = document.querySelector('#back');
